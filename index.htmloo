@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAZE.AI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1e1e2f);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+      animation: pulse 3s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.8;
+        text-shadow: 0 0 15px #8a2be2;
+      }
+      100% {
+        opacity: 1;
+        text-shadow: 0 0 35px #9370db;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-top: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .orb {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(147,112,219,0.8) 0%, rgba(72,61,139,0.2) 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: float 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-40px); }
+    }
+
+    .typing {
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      border-right: 2px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(40, end) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 300px; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb"></div>
+  <h1>LAZE.AI</h1>
+  <p class="typing">Hello — I’m LAZE.AI, your emotional mirror.</p>
+</body>
+</html>
