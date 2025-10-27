@@ -103,5 +103,124 @@
   <div class="orb"></div>
   <h1>LAZE.AI</h1>
   <p class="typing">Hello — I’m LAZE.AI, your emotional mirror.</p>
+</body><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAZE.AI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1e1e2f);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      text-align: center;
+      position: relative;
+      cursor: none;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+      animation: pulse 3s infinite alternate;
+      z-index: 2;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.8; text-shadow: 0 0 15px #8a2be2; }
+      100% { opacity: 1; text-shadow: 0 0 35px #9370db; }
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-top: 1rem;
+      letter-spacing: 1px;
+      z-index: 2;
+    }
+
+    .orb {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(147,112,219,0.8) 0%, rgba(72,61,139,0.2) 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 6s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-50px); }
+    }
+
+    .typing {
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+      overflow: hidden;
+      border-right: .15em solid white;
+      white-space: nowrap;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 330px; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Hover glow reaction */
+    .glow {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      transition: transform 0.1s ease;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="orb"></div>
+  <div class="glow" id="glow"></div>
+  <h1>LAZE.AI</h1>
+  <p class="typing">Hello — I’m LAZE.AI, your emotional mirror.</p>
+
+  <script>
+    const glow = document.getElementById('glow');
+    document.addEventListener('mousemove', e => {
+      glow.style.transform = `translate(${e.clientX - 75}px, ${e.clientY - 75}px)`;
+    });
+  </script>
 </body>
+</html>
+
 </html>
